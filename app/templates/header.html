@@ -1,0 +1,17 @@
+<center><img src="../static/images/gmemegen.png"></center>
+<center>
+  <img src="../static/images/cloudsql.jpg" width="256" height="100">
+  <img src="../static/images/kubernetes.png" width="380" height="130">
+</center>
+<hr height=3>
+<form action ={{ url_for('post_images') }} method="post" enctype="multipart/form-data">
+  <table width=75%>
+    <tr><td align="left" valign="bottom"><input type="file" name="image"></td></tr>
+    <tr>
+      <td align="left"><input type="image" src="../static/images/submit.png" alt="Submit" width="150" height="50"></td>
+      <td align="center"><img src="../static/images/recent.png"></td>
+      <td align="right"><img src="../static/images/random.png"></td>
+    </tr>
+  </table>
+</form>
+<hr height=3>

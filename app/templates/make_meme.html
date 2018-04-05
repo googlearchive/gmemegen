@@ -1,0 +1,8 @@
+<img src={{ url_for('static', filename='images/%s' % image.name)}} width="512" height="512">
+<br>
+<form action={{url_for('post_meme')}} method="post">
+    Top: <input type="text" name="top">
+    Bottom: <input type="text" name="bottom"><br>
+    <input type="hidden" name="image" value={{image.id}}>
+    <input type="submit" value="Submit">
+</form>
