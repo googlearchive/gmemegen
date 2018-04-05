@@ -2,9 +2,9 @@
 
 This is an application from a Lab excercise presented at pgconf 2018
 
-## Generating Images
+## Installation Use
 
-todo(): write description
+todo(): Add qwicklab link
 
 ## Disclaimer
 
