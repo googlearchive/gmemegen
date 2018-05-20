@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import pg8000
+import html
 
 # todo(sixela): implement paging instead of limits
 
@@ -36,7 +37,7 @@ def get_recent(cursor):
 
 def create_meme(cursor, image_id, top, bottom):
     cursor.execute('''INSERT INTO meme (image_id, top, bottom ) VALUES \
-         (%d, '%s', '%s') RETURNING id''' % (image_id, top, bottom))
+         (%d, '%s', '%s') RETURNING id''' % (image_id, html.escape(top), html.escape(bottom)))
     return cursor.fetchone()[0]
 
 def get_image_path(cursor, image_id):
@@ -44,7 +45,7 @@ def get_image_path(cursor, image_id):
     return cursor.fetchone()[0]
 
 def create_image(cursor, img_name):
-    cursor.execute('''INSERT into image (name) values ('%s') RETURNING id''' % img_name)
+    cursor.execute('''INSERT into image (name) values ('%s') RETURNING id''' % html.escape(img_name))
     return cursor.fetchone()[0]
 
 def create_schema(cursor):
