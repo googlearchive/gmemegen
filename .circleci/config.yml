@@ -38,7 +38,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            flake8 ./ tests --output-file test-reports
+            flake8 --statistics --show-source
 
       - store_artifacts:
           path: test-reports
