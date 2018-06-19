@@ -4,10 +4,13 @@
   <img src="../static/images/kubernetes.png" width="380" height="130">
 </center>
 <hr height=3>
-<form action = method="post" enctype="multipart/form-data">
-  <table align="center" width="90%">
-      <td align="left"><a href="{{ url_for('view_recent') }}"><img src="../static/images/recent.png"></a></td>
-      <td align="right"><a href="{{ url_for('view_random') }}"><img src="../static/images/random.png"></a></td>
+<form action ={{ url_for('post_images') }} method="post" enctype="multipart/form-data">
+  <table width=75%>
+    <tr><td align="left" valign="bottom"><input type="file" name="image"></td></tr>
+    <tr>
+      <td align="left"><input type="image" src="../static/images/submit.png" alt="Submit" width="150" height="50"></td>
+      <td align="center"><img src="../static/images/recent.png"></td>
+      <td align="right"><img src="../static/images/random.png"></td>
     </tr>
   </table>
 </form>

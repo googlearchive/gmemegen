@@ -1,3 +1,6 @@
+{% if form_data.to_upload %}
+    {% include  "header.html" %}
+{% endif %}
 {% block body %}
     {% for image in form_data.images %}
         <a href={{image.id_url}}>
