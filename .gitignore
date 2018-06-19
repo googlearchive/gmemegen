@@ -5,6 +5,3 @@ venv/*
 # IntelliJ
 .idea/*
 *.iml
-
-# Generated files
-app/static/memes/*
