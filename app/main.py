@@ -13,9 +13,10 @@
 # limitations under the License.
 
 import os
+import time
 
 from flask import (
-    Flask, abort, request, redirect, url_for, render_template,
+    Flask, abort, request, redirect, url_for, render_template, g,
     send_from_directory)
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.expression import func
@@ -51,6 +52,12 @@ def setup_db():
     db.create_all()
 
 
+@app.before_request
+def setup_request_time():
+    start_time = time.time()
+    g.request_time = lambda: "%d ms" % ((time.time() - start_time) * 1000)
+
+
 @app.route('/')
 def index():
     return redirect(url_for("get_create_menu"))
@@ -78,7 +85,7 @@ def get_create_menu():
 def get_create(template):
     if template not in get_templates_list():
         abort(400, "Template does not exist.")
-    return render_template('create.html', template=template)
+    return render_template('create_meme.html', template=template)
 
 
 @app.route('/meme/<int:meme_id>', methods=['GET'])
