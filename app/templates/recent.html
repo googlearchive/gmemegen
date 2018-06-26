@@ -1,8 +1,8 @@
 {% include  "header.html" %}
 {% block body %}
     {% for meme in memes %}
-        <a href="{{ url_for('static', filename='memes/%d' % meme.id) }}">
-            <img src="{{ url_for('static', filename='memes/%d' % meme.id) }}" width="256" height="256">
+        <a href="{{ url_for('view_meme', meme_id=meme.id) }}">
+            <img src="{{ url_for('view_meme', meme_id=meme.id) }}" width="256" height="256">
         </a>
     {% endfor %}
 {% endblock %}

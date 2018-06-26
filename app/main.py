@@ -68,21 +68,30 @@ def view_random():
     return redirect(url_for('view_meme', meme_id=meme.id))
 
 
-@app.route('/create', methods=['GET'])
+@app.route('/template', methods=['GET'])
 def get_create_menu():
     templates = get_templates_list()
     return render_template('view_templates.html', templates=templates)
 
 
-@app.route('/create/<string:template>', methods=['GET'])
+@app.route('/template/<string:template>', methods=['GET'])
 def get_create(template):
     if template not in get_templates_list():
         abort(400, "Template does not exist.")
     return render_template('create.html', template=template)
 
 
-@app.route('/create', methods=['POST'])
-def post_create():
+@app.route('/meme/<int:meme_id>', methods=['GET'])
+def view_meme(meme_id):
+    meme_file = os.path.join(MEME_DIR, '%d.png' % meme_id)
+    if not os.path.exists(meme_file):
+        generate_meme(meme_file, meme_id)
+    print(meme_file)
+    return send_from_directory(MEME_DIR, '%d.png' % meme_id)
+
+
+@app.route('/meme', methods=['POST'])
+def create_meme():
     try:
         meme = Meme(
             template=request.form['template'],
@@ -95,15 +104,6 @@ def post_create():
         return redirect(url_for('view_meme', meme_id=meme.id))
     except KeyError:
         abort(400, "Incorrect parameters.")
-
-
-@app.route('/static/memes/<int:meme_id>', methods=['GET'])
-def view_meme(meme_id):
-    meme_file = os.path.join(MEME_DIR, '%d.png' % meme_id)
-    if not os.path.exists(meme_file):
-        generate_meme(meme_file, meme_id)
-    print(meme_file)
-    return send_from_directory(MEME_DIR, '%d.png' % meme_id)
 
 
 def generate_meme(file, meme_id):
