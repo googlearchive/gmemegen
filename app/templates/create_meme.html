@@ -1,0 +1,9 @@
+<img src="{{ url_for('static', filename='templates/%s' % template) }}" width="512" height="512">
+<br>
+<form action="{{url_for('create_meme')}}" method="post">
+    Top: <input type="text" name="top">
+    Bottom: <input type="text" name="bottom"><br>
+    <input type="hidden" name="template" value="{{ template }}">
+    <input type="submit" value="Submit">
+</form>
+{% include  "footer.html" %}

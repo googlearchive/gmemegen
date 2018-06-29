@@ -1,7 +1,9 @@
+{% include  "header.html" %}
 {% block body %}
-    {% for image in form_data.images %}
-        <a href={{image.id_url}}>
-            <img src='{{image.img_url}}' width="256" height="256">
+    {% for meme in memes %}
+        <a href="{{ url_for('view_meme', meme_id=meme.id) }}">
+            <img src="{{ url_for('view_meme', meme_id=meme.id) }}" width="256" height="256">
         </a>
     {% endfor %}
 {% endblock %}
+{% include  "footer.html" %}
