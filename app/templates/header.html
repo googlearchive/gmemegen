@@ -1,15 +1,35 @@
-<center><img src="../static/images/gmemegen.png"></center>
-<center>
-  <img src="../static/images/cloudsql.jpg" width="256" height="100">
-  <img src="../static/images/kubernetes.png" width="380" height="130">
-</center>
-<hr height=3>
-<form action = method="post" enctype="multipart/form-data">
-  <table align="center" width="90%">
-      <td align="left"><a href="{{ url_for('view_recent') }}"><img src="../static/images/recent.png"></a></td>
-      <td align="right"><a href="{{ url_for('view_random') }}"><img src="../static/images/random.png"></a></td>
-    </tr>
-  </table>
-</form>
-<hr height=3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../static/dist/semantic.min.js"></script>
+    <title>gMemegen</title>
+    <style>
+        .main.container {
+            margin-top: 5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="ui blue fixed inverted menu">
+            <div class="ui container">
+                    <a href="#" class="header item">
+                        <img src="../static/images/logo_gcp_hexagon_rgb.png" class="logo" />
+                        gMemegen
+                    </a>
+                <a href="/" class="item">Home</a>
+                <a href="{{ url_for('view_recent') }}" class="item">Recent</a>
+                <a href="{{ url_for('view_random') }}" target="_blank" class="item">Random</a>
+            </div>
+        </div>
+    </header>
+    <div class="ui main container">
 

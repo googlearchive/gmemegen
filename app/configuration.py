@@ -39,7 +39,7 @@ def get_args():
             help='Host address of the database.')
         parser.add_argument(
             '-n', '--db-name',
-            default=os.environ.get('DB_NAME', 'memegen.db'),
+            default=os.environ.get('DB_NAME', 'memegen'),
             help='Name of the database.')
         parser.add_argument(
             '-u', '--db-user',
@@ -56,7 +56,7 @@ def get_args():
 
 def get_db_uri():
     args = get_args()
-    return 'postgresql+pg8000://{}:{}@{}/'.format(
+    return 'postgresql+pg8000://{}:{}@{}/{}'.format(
         args.db_user, args.db_pass, args.db_host, args.db_name)
 
 

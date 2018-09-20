@@ -78,7 +78,7 @@ def view_random():
 @app.route('/template', methods=['GET'])
 def get_create_menu():
     templates = get_templates_list()
-    return render_template('view_templates.html', templates=templates)
+    return render_template('view.html', templates=templates)
 
 
 @app.route('/template/<string:template>', methods=['GET'])
