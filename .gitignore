@@ -1,6 +1,7 @@
 *.pyc
 env/*
 venv/*
+.DS_STORE
 
 # IntelliJ
 .idea/*

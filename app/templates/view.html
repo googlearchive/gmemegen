@@ -1,16 +1,16 @@
 {% include  "header.html" %}
-        <div class="ui segment">
+        <div class="ui center aligned segment">
             <h2 class="ui dividing header">
                 <i class="picture icon"></i>
                 <div class="content">
-                    Recent Memes
+                    Create your meme
                 </div>
             </h2>
             <div class="ui medium images" style="vertical-align: top">
-            {% for meme in memes %}
-                 <a href="{{ url_for('view_meme', meme_id=meme.id) }}">
-                    <img class="ui rounded image" src="{{ url_for('view_meme', meme_id=meme.id) }}">
-                </a>
+            {% for template in templates %}
+                <a  href="{{ url_for('get_create', template=template) }}">
+                    <img class="ui rounded image" src="{{ url_for('static', filename='templates/%s' % template) }}">
+                </a> 
             {% endfor %}
             </div>
         </div>

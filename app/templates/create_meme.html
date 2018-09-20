@@ -1,9 +1,23 @@
-<img src="{{ url_for('static', filename='templates/%s' % template) }}" width="512" height="512">
-<br>
-<form action="{{url_for('create_meme')}}" method="post">
-    Top: <input type="text" name="top">
-    Bottom: <input type="text" name="bottom"><br>
-    <input type="hidden" name="template" value="{{ template }}">
-    <input type="submit" value="Submit">
-</form>
+{% include  "header.html" %}
+<div class="ui center aligned segment">
+    <h2 class="ui dividing header">
+        <i class="plus icon"></i>
+        <div class="content">
+            Creating
+        </div>
+    </h2>
+    <form class="ui huge form" action="{{url_for('create_meme')}}" method="post" style="text-align:left">
+        <div class="field">
+            <img class="ui large rounded image" src="{{ url_for('static', filename='templates/%s' % template) }}">
+        </div>
+        <div class="field">
+            <label for="top">Top:</label> <input id="top" type="text" name="top">
+        </div>
+        <div class="field">
+            <label for="bottom">Bottom:</label> <input id="bottom" type="text" name="bottom">
+        </div>
+        <input type="hidden" name="template" value="{{ template }}">
+        <input type="submit" class="ui fluid green button" value="Submit">
+    </form>
+</div>
 {% include  "footer.html" %}

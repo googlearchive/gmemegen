@@ -1,9 +1,0 @@
-{% include  "header.html" %}
-{% block body %}
-    {% for template in templates %}
-        <a href="{{ url_for('get_create', template=template) }}">
-            <img src="{{ url_for('static', filename='templates/%s' % template) }}" width="256" height="256">
-        </a>
-    {% endfor %}
-{% endblock %}
-{% include  "footer.html" %}
