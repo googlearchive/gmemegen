@@ -42,6 +42,11 @@ spec:
                 secretKeyRef:
                   name: cloudsql-db-credentials
                   key: password
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: dbname
         # Change <INSTANCE_CONNECTION_NAME> here to include your GCP
         # project, the region of your Cloud SQL instance and the name
         # of your Cloud SQL instance. The format is $PROJECT:$REGION:$INSTANCE

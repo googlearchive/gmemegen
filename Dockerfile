@@ -12,3 +12,4 @@ RUN pip install -r /app/requirements.txt
 #ENV DB_HOST 127.0.0.1
 #ENV DB_USER postgres
 #ENV DB_PASS password
+#ENV DB_NAME memegen
