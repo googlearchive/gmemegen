@@ -7,7 +7,7 @@ cluster running on Google Kubernetes Engine.
 
 ## Deployment
 You can find the complete instructions (including resource setup) in the form a codelab, located 
-[here](http://codelabs.developers.google.com/codelabs/cloud-potgresql-gke-memegen). 
+[here](https://codelabs.developers.google.com/codelabs/cloud-postgresql-gke-memegen). 
 
 The app attempts a connection to a postgres server located at 127.0.0.1 unless otherwise specificed.
 For a full list of available flags, use `python app/main.py -help`.
