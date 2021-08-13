@@ -1,6 +1,8 @@
 # ![gMemegen](https://github.com/GoogleCloudPlatform/gmemegen/raw/master/app/static/images/gmemegen.png)
 [![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/gmemegen.svg?style=svg)](https://circleci.com/gh/GoogleCloudPlatform/gmemegen)
 
+**Notice:** this project has been archived and is no longer being maintained. 
+
 gMemegen is a sample application, showcasing Cloud SQL Postgres connectivity from a Kubernetes
 cluster running on Google Kubernetes Engine. 
 
